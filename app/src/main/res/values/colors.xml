@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#ee4c77</color>
+    <color name="colorPrimaryDark">#C42A53</color>
+    <color name="colorAccent">#57bbbc</color>
+
+    <color name="white">#ffffff</color>
+    <color name="warm_grey">#8d8c8c</color>
+    <color name="white_two">#d8d8d8</color>
+    <color name="egg_shell">#ebe9d7</color>
+    <color name="black">#000000</color>
+    <color name="night_blue">#0d0430</color>
+    <color name="charcoal_grey">#383743</color>
+    <color name="greyish">#acabab</color>
+</resources>

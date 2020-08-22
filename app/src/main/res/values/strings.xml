@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">ioasys</string>
+    <string name="e_mail_hint">E-mail</string>
+    <string name="senha_hint">Senha</string>
+    <string name="entrar">Entrar</string>
+    <string name="subtitulo">Lorem ipsum dolor sit amet, contetur adipiscing elit. Lorem dolor sit</string>
+    <string name="msgErro">Credenciais informadas são inválidas, tente novamente</string>
+    <string name="titulo">BEM-VINDO AO \n EMPRESAS</string>
+</resources>
