@@ -6,4 +6,5 @@
     <string name="subtitulo">Lorem ipsum dolor sit amet, contetur adipiscing elit. Lorem dolor sit</string>
     <string name="msgErro">Credenciais informadas são inválidas, tente novamente</string>
     <string name="titulo">BEM-VINDO AO \n EMPRESAS</string>
+    <string name="empresa_nao_encontrada">Nenhuma empresa foi encontrada \n para a busca realizada</string>
 </resources>

@@ -1,5 +1,6 @@
 package com.hrv.app_android_mvp_kotlin_ioasys.retrofit
 
+import com.hrv.app_android_mvp_kotlin_ioasys.retrofit.services.EmpresaService
 import com.hrv.app_android_mvp_kotlin_ioasys.retrofit.services.LoginService
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
@@ -9,8 +10,6 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 class RetrofitBase {
     private val URL_BASE = "https://empresas.ioasys.com.br/"
-
-    // private var login: LoginService? = null
     var mRetrofit: Retrofit
 
     init{
@@ -20,7 +19,6 @@ class RetrofitBase {
             .addConverterFactory(GsonConverterFactory.create())
             .build()
     }
-
 
     private fun configuraClient(): OkHttpClient {
         val logging = HttpLoggingInterceptor()
@@ -33,7 +31,8 @@ class RetrofitBase {
     fun getLoginService(): LoginService {
         return mRetrofit.create(LoginService::class.java)
     }
-    /*  fun getEmpresaService(): EmpresaService? {
-          return login
-      }*/
+    fun getEmpresaService(): EmpresaService {
+        return mRetrofit.create(EmpresaService::class.java)
+    }
+
 }

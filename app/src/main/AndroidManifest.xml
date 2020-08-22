@@ -12,7 +12,9 @@
         android:roundIcon="@mipmap/ic_launcher_new_icon_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".lista_empresas.ListaEmpresaActivity"></activity>
+        <activity android:name=".detalhe_empresa.DetalheListaEmpresas"
+            android:parentActivityName=".detalhe_empresa.DetalheListaEmpresas"/>
+        <activity android:name=".lista_empresas.ListaEmpresaActivity" />
         <activity android:name=".login.LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -21,6 +23,10 @@
             </intent-filter>
         </activity>
         <activity android:name=".main.MainActivity" />
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
     </application>
 
 </manifest>

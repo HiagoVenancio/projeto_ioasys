@@ -9,7 +9,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import com.hrv.app_android_mvp_kotlin_ioasys.R
-import com.hrv.app_android_mvp_kotlin_ioasys.main.MainActivity
+import com.hrv.app_android_mvp_kotlin_ioasys.lista_empresas.ListaEmpresaActivity
 import com.hrv.app_android_mvp_kotlin_ioasys.utilitarios.Util
 import kotlinx.android.synthetic.main.login_activity.*
 
@@ -17,7 +17,7 @@ import kotlinx.android.synthetic.main.login_activity.*
 class LoginActivity : AppCompatActivity(), ILogin.View {
 
     private lateinit var presenter: ILogin.Presenter
-    private val INPUT_TYPE_PASSWORD_TEXT : Int = 129
+    private val INPUT_TYPE_PASSWORD_TEXT: Int = 129
 
     @SuppressLint("ClickableViewAccessibility")
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -50,6 +50,7 @@ class LoginActivity : AppCompatActivity(), ILogin.View {
     }
 
     fun configurarElementosIniciais() {
+        supportActionBar!!.hide()
         window.statusBarColor = ContextCompat.getColor(this, R.color.warm_grey)
         etSenha.inputType = INPUT_TYPE_PASSWORD_TEXT
     }
@@ -81,7 +82,7 @@ class LoginActivity : AppCompatActivity(), ILogin.View {
 
     override fun sucessoAoLogar() {
         val intent =
-            Intent(this, MainActivity::class.java)
+            Intent(this, ListaEmpresaActivity::class.java)
         Util.limparActivitiesAnteriores(intent)
         startActivity(intent)
     }
