@@ -17,6 +17,7 @@ import kotlinx.android.synthetic.main.login_activity.*
 class LoginActivity : AppCompatActivity(), ILogin.View {
 
     private lateinit var presenter: ILogin.Presenter
+    private val INPUT_TYPE_PASSWORD_TEXT : Int = 129
 
     @SuppressLint("ClickableViewAccessibility")
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -37,20 +38,20 @@ class LoginActivity : AppCompatActivity(), ILogin.View {
         }
     }
 
+    @SuppressLint("UseCompatLoadingForDrawables")
     private fun mudarVisibilidadeDaSenha() {
-        if (etSenha.inputType == 129) {
+        if (etSenha.inputType == INPUT_TYPE_PASSWORD_TEXT) {
             etSenha.inputType = InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD
             ivVisibilidadeSenha.setImageDrawable(getDrawable(R.drawable.ic_login_visibility_off_24))
         } else {
-            etSenha.inputType = 129
+            etSenha.inputType = INPUT_TYPE_PASSWORD_TEXT
             ivVisibilidadeSenha.setImageDrawable(getDrawable(R.drawable.ic_login_visibility_24))
         }
-
     }
 
     fun configurarElementosIniciais() {
         window.statusBarColor = ContextCompat.getColor(this, R.color.warm_grey)
-        etSenha.inputType = 129
+        etSenha.inputType = INPUT_TYPE_PASSWORD_TEXT
     }
 
     override fun iniciarLogin() {
