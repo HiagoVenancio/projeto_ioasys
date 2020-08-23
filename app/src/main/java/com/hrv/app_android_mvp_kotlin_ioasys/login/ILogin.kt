@@ -7,6 +7,7 @@ interface ILogin {
         fun terminarLogin()
         fun camposVazios()
         fun dadosIncorretos()
+        fun erroDeComunicacaoComServidor()
         fun sucessoAoLogar()
 
     }

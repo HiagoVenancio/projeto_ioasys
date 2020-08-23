@@ -1,7 +1,7 @@
 package com.hrv.app_android_mvp_kotlin_ioasys.login
 
 import android.content.Context
-import com.hrv.app_android_mvp_kotlin_ioasys.Constantes
+import com.hrv.app_android_mvp_kotlin_ioasys.utilitarios.Constantes
 import com.hrv.app_android_mvp_kotlin_ioasys.entities.Login
 import com.hrv.app_android_mvp_kotlin_ioasys.entities.response.LoginResposta
 import com.hrv.app_android_mvp_kotlin_ioasys.retrofit.RetrofitBase
@@ -24,7 +24,7 @@ class LoginPresenter(val context: Context, private val loginView: ILogin.View) :
         } else {
             loginView.iniciarLogin()
 
-            val login = Login(mUsuario, mSenha)
+            val login = Login(usuario, senha)
             val callLogin = mRetrofitLogin.loginUsuario(login)
             callLogin.enqueue(object : Callback<LoginResposta> {
                 override fun onResponse(
@@ -32,32 +32,33 @@ class LoginPresenter(val context: Context, private val loginView: ILogin.View) :
                     response: Response<LoginResposta>
                 ) {
 
-                    SharedPreferencesConfig.salvarEstado(
-                        context, Constantes.KEY_REQUEST_ACCESS_TOKEN,
-                        response.headers().get(Constantes.KEY_REQUEST_ACCESS_TOKEN).toString()
-                    )
+                    if (response.isSuccessful) {
+                        SharedPreferencesConfig.salvarEstado(
+                            context, Constantes.KEY_REQUEST_ACCESS_TOKEN,
+                            response.headers().get(Constantes.KEY_REQUEST_ACCESS_TOKEN).toString()
+                        )
 
-                    SharedPreferencesConfig.salvarEstado(
-                        context, Constantes.KEY_REQUEST_CLIENT,
-                        response.headers().get(Constantes.KEY_REQUEST_CLIENT).toString()
-                    )
+                        SharedPreferencesConfig.salvarEstado(
+                            context, Constantes.KEY_REQUEST_CLIENT,
+                            response.headers().get(Constantes.KEY_REQUEST_CLIENT).toString()
+                        )
 
-                    SharedPreferencesConfig.salvarEstado(
-                        context, Constantes.KEY_REQUEST_UID,
-                        response.headers().get(Constantes.KEY_REQUEST_UID).toString()
-                    )
+                        SharedPreferencesConfig.salvarEstado(
+                            context, Constantes.KEY_REQUEST_UID,
+                            response.headers().get(Constantes.KEY_REQUEST_UID).toString()
+                        )
 
-                    loginView.terminarLogin()
-                    loginView.sucessoAoLogar()
+                        loginView.terminarLogin()
+                        loginView.sucessoAoLogar()
+                    } else {
+                        loginView.dadosIncorretos()
+                    }
                 }
 
                 override fun onFailure(call: Call<LoginResposta?>?, t: Throwable?) {
-                    loginView.dadosIncorretos()
+                    loginView.erroDeComunicacaoComServidor()
                 }
-
             })
-
-
         }
     }
 }

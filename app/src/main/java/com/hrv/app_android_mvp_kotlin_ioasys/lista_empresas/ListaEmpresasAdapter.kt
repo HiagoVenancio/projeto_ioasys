@@ -10,8 +10,8 @@ import android.widget.BaseAdapter
 import android.widget.ImageView
 import android.widget.ProgressBar
 import android.widget.TextView
-import com.hrv.app_android_mvp_kotlin_ioasys.Constantes
 import com.hrv.app_android_mvp_kotlin_ioasys.R
+import com.hrv.app_android_mvp_kotlin_ioasys.utilitarios.Constantes
 import com.hrv.app_android_mvp_kotlin_ioasys.utilitarios.GlideUtil
 
 

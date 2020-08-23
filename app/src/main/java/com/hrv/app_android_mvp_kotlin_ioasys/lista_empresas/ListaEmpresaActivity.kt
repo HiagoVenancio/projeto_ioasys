@@ -8,7 +8,7 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.SearchView
-import com.hrv.app_android_mvp_kotlin_ioasys.Constantes
+import com.hrv.app_android_mvp_kotlin_ioasys.utilitarios.Constantes
 import com.hrv.app_android_mvp_kotlin_ioasys.R
 import com.hrv.app_android_mvp_kotlin_ioasys.detalhe_empresa.DetalheListaEmpresas
 import kotlinx.android.synthetic.main.activity_lista_empresa.*
@@ -38,9 +38,7 @@ class ListaEmpresaActivity : AppCompatActivity(), IListaEmpresas.View {
                 presenter.pesquisarEmpresa(query!!)
                 return false
             }
-
             override fun onQueryTextChange(text: String): Boolean {
-
                 return false
             }
         })

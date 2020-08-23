@@ -25,7 +25,7 @@ abstract class GlideUtil {
             url: String
         ) {
 
-            /*trataiva para quando vier com valor NULL de foto */
+            /*trataiva para evitar ficar mostrando o progressbar para quando nao tiver foto */
             if (url.length < 40) {
                 carregarImagemLocal(context, imagemview)
             } else {

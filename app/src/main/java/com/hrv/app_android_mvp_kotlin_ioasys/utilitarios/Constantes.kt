@@ -1,4 +1,4 @@
-package com.hrv.app_android_mvp_kotlin_ioasys
+package com.hrv.app_android_mvp_kotlin_ioasys.utilitarios
 
 abstract class Constantes {
 

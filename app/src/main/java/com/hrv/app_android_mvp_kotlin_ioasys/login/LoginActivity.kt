@@ -80,6 +80,11 @@ class LoginActivity : AppCompatActivity(), ILogin.View {
         terminarLogin()
     }
 
+    override fun erroDeComunicacaoComServidor() {
+        terminarLogin()
+        Toast.makeText(this, "Problemas com servidor", Toast.LENGTH_SHORT).show()
+    }
+
     override fun sucessoAoLogar() {
         val intent =
             Intent(this, ListaEmpresaActivity::class.java)

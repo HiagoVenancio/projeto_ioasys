@@ -1,9 +1,9 @@
 package com.hrv.app_android_mvp_kotlin_ioasys.lista_empresas
 
 import android.content.Context
-import com.hrv.app_android_mvp_kotlin_ioasys.Constantes
 import com.hrv.app_android_mvp_kotlin_ioasys.entities.response.EmpresasResposta
 import com.hrv.app_android_mvp_kotlin_ioasys.retrofit.RetrofitBase
+import com.hrv.app_android_mvp_kotlin_ioasys.utilitarios.Constantes
 import com.hrv.app_android_mvp_kotlin_ioasys.utilitarios.SharedPreferencesConfig
 import retrofit2.Call
 import retrofit2.Callback
@@ -45,5 +45,4 @@ class ListaEmpresaPresenter(
             }
         })
     }
-
 }

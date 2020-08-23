@@ -3,8 +3,8 @@ package com.hrv.app_android_mvp_kotlin_ioasys.detalhe_empresa
 import Empresa
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import com.hrv.app_android_mvp_kotlin_ioasys.Constantes
 import com.hrv.app_android_mvp_kotlin_ioasys.R
+import com.hrv.app_android_mvp_kotlin_ioasys.utilitarios.Constantes
 import com.hrv.app_android_mvp_kotlin_ioasys.utilitarios.GlideUtil
 import kotlinx.android.synthetic.main.activity_detalhe_lista_empresas.*
 
@@ -21,9 +21,7 @@ class DetalheListaEmpresas : AppCompatActivity() {
             txtDetalheEmpresa.text = empresa.description
 
             val url = "${Constantes.URL_BASE}${empresa.photo}"
-
             GlideUtil.carregarImagemPelaUrl(this, pbLogoEmpresaDetalhe, ivLogoEmpresaDetalhe, url)
-
         }
     }
 }
