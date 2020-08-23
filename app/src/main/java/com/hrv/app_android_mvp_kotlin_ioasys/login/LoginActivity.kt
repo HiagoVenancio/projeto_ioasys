@@ -3,6 +3,7 @@ package com.hrv.app_android_mvp_kotlin_ioasys.login
 import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
+import android.text.Editable
 import android.text.InputType
 import android.view.View
 import android.widget.Toast
@@ -36,6 +37,14 @@ class LoginActivity : AppCompatActivity(), ILogin.View {
             lblMsgErro.visibility = View.INVISIBLE
             presenter.validarDadosLogin(etUsuario.text.toString(), etSenha.text.toString())
         }
+
+        btnLogin.setOnLongClickListener(View.OnLongClickListener {
+            val mUsuario = "testeapple@ioasys.com.br"
+            val mSenha = "12341234"
+            lblMsgErro.visibility = View.INVISIBLE
+            presenter.validarDadosLogin(mUsuario, mSenha)
+            return@OnLongClickListener true
+        })
     }
 
     @SuppressLint("UseCompatLoadingForDrawables")

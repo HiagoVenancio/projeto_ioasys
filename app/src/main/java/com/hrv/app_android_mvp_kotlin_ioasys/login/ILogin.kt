@@ -9,7 +9,6 @@ interface ILogin {
         fun dadosIncorretos()
         fun erroDeComunicacaoComServidor()
         fun sucessoAoLogar()
-
     }
 
 

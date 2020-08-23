@@ -13,8 +13,6 @@ import retrofit2.Response
 
 class LoginPresenter(val context: Context, private val loginView: ILogin.View) : ILogin.Presenter {
 
-    val mUsuario: String = "testeapple@ioasys.com.br"
-    val mSenha: String = "12341234"
     private val mRetrofitLogin = RetrofitBase().getLoginService()
 
     override fun validarDadosLogin(usuario: String, senha: String) {
