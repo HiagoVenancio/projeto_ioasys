@@ -24,6 +24,18 @@
                 android:layout_height="140dp"
                 android:layout_margin="20dp"
                 android:scaleType="centerCrop"
+                tools:src="@drawable/ic_launcher_background"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ProgressBar
+                android:visibility="gone"
+                android:id="@+id/pbLogoEmpresaDetalhe"
+                android:layout_width="0dp"
+                android:layout_height="140dp"
+                android:layout_margin="20dp"
+                android:scaleType="centerCrop"
                 android:src="@drawable/ic_launcher_background"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"

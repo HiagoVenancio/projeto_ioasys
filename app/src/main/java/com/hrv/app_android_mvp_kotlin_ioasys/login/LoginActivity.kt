@@ -83,7 +83,7 @@ class LoginActivity : AppCompatActivity(), ILogin.View {
     override fun sucessoAoLogar() {
         val intent =
             Intent(this, ListaEmpresaActivity::class.java)
-        Util.limparActivitiesAnteriores(intent)
+        Util.limparStackDeActivities(intent)
         startActivity(intent)
     }
 

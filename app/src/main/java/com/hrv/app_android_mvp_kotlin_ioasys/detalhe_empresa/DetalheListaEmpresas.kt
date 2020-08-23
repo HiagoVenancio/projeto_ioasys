@@ -5,6 +5,7 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.hrv.app_android_mvp_kotlin_ioasys.Constantes
 import com.hrv.app_android_mvp_kotlin_ioasys.R
+import com.hrv.app_android_mvp_kotlin_ioasys.utilitarios.GlideUtil
 import kotlinx.android.synthetic.main.activity_detalhe_lista_empresas.*
 
 class DetalheListaEmpresas : AppCompatActivity() {
@@ -18,6 +19,10 @@ class DetalheListaEmpresas : AppCompatActivity() {
 
             supportActionBar!!.title = empresa.enterprise_name
             txtDetalheEmpresa.text = empresa.description
+
+            val url = "${Constantes.URL_BASE}${empresa.photo}"
+
+            GlideUtil.carregarImagemPelaUrl(this, pbLogoEmpresaDetalhe, ivLogoEmpresaDetalhe, url)
 
         }
     }
