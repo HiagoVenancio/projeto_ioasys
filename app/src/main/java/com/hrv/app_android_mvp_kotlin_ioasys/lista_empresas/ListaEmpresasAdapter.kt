@@ -10,7 +10,7 @@ import android.widget.BaseAdapter
 import android.widget.TextView
 import com.hrv.app_android_mvp_kotlin_ioasys.R
 
-class ListaEmpresasAdapter(var context: Context, private var lista : List<Empresa>) : BaseAdapter() {
+class ListaEmpresasAdapter(var context: Context, private var lista: List<Empresa>) : BaseAdapter() {
 
     override fun getCount(): Int {
         return lista.size
@@ -29,7 +29,7 @@ class ListaEmpresasAdapter(var context: Context, private var lista : List<Empres
         val inflate =
             LayoutInflater.from(context).inflate(R.layout.item_empresas_lista, parent, false)
 
-        val empresa : Empresa = getItem(position) as Empresa
+        val empresa: Empresa = getItem(position) as Empresa
         val txtNomeEmpresa = inflate.findViewById<TextView>(R.id.txtNomeEmpresa)
         val txtTipoEmpresa = inflate.findViewById<TextView>(R.id.txtTipoEmpresa)
         val txtPaisEmpresa = inflate.findViewById<TextView>(R.id.txtPaisEmpresa)

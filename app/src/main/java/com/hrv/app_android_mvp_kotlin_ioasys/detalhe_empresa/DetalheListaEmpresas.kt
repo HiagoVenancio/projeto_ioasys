@@ -1,8 +1,8 @@
 package com.hrv.app_android_mvp_kotlin_ioasys.detalhe_empresa
 
 import Empresa
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import com.hrv.app_android_mvp_kotlin_ioasys.Constantes
 import com.hrv.app_android_mvp_kotlin_ioasys.R
 import kotlinx.android.synthetic.main.activity_detalhe_lista_empresas.*
@@ -12,16 +12,13 @@ class DetalheListaEmpresas : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_detalhe_lista_empresas)
 
-        if(intent.hasExtra(Constantes.KEY_DETALHE_EMPRESA)){
-            val empresa : Empresa = intent.getSerializableExtra(Constantes.KEY_DETALHE_EMPRESA) as Empresa
+        if (intent.hasExtra(Constantes.KEY_DETALHE_EMPRESA)) {
+            val empresa: Empresa =
+                intent.getSerializableExtra(Constantes.KEY_DETALHE_EMPRESA) as Empresa
 
             supportActionBar!!.title = empresa.enterprise_name
-
             txtDetalheEmpresa.text = empresa.description
-            //ivLogoEmpresaDetalhe.setIm
 
         }
-
-
     }
 }

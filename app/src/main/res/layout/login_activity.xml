@@ -60,7 +60,7 @@
         android:drawableStart="@drawable/ic_login_mail_24"
         android:drawablePadding="@dimen/drawable_padding"
         android:hint="@string/e_mail_hint"
-        android:inputType="text"
+        android:inputType="textEmailAddress"
         android:singleLine="true"
         app:layout_constraintBottom_toTopOf="@+id/etSenha"
         app:layout_constraintLeft_toLeftOf="parent"

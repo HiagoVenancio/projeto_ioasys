@@ -26,7 +26,7 @@ class LoginActivity : AppCompatActivity(), ILogin.View {
 
         configurarElementosIniciais()
 
-        presenter = LoginPresenter(this)
+        presenter = LoginPresenter(this, this@LoginActivity)
 
         ivVisibilidadeSenha.setOnClickListener {
             mudarVisibilidadeDaSenha()
@@ -72,7 +72,7 @@ class LoginActivity : AppCompatActivity(), ILogin.View {
     }
 
     override fun camposVazios() {
-        Toast.makeText(this, "Campos Vazios", Toast.LENGTH_SHORT).show()
+        Toast.makeText(this, "Favor preencher os campos", Toast.LENGTH_SHORT).show()
     }
 
     override fun dadosIncorretos() {

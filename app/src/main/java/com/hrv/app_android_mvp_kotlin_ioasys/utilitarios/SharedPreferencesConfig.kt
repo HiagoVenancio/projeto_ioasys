@@ -8,25 +8,22 @@ class SharedPreferencesConfig {
 
     companion object {
 
-        private const val KEY_LOGIN_PREFERENCE: String = "KEY_LOGIN"
-
-        fun salvarEstadoLogin(context: Context?, value: Int) {
+        fun salvarEstado(context: Context?, key:String, value: String) {
             val edit = PreferenceManager.getDefaultSharedPreferences(context)
             val editor1 = edit.edit()
-            editor1.putInt(KEY_LOGIN_PREFERENCE, value)
+            editor1.putString(key, value)
             editor1.apply()
         }
 
-        fun isLogado(context: Context?): Boolean {
+        fun recuperarEstado(context: Context?, key:String): String {
             val sharedPreferences = PreferenceManager.getDefaultSharedPreferences(context)
-            val valor = sharedPreferences.getInt(KEY_LOGIN_PREFERENCE, 0)
-            return valor > 0
+            return sharedPreferences.getString(key, "")!!
         }
 
-        fun logout(context: Context?) {
+        fun limparEstado(context: Context?) {
             val edit = PreferenceManager.getDefaultSharedPreferences(context)
             val editor1 = edit.edit()
-            editor1.remove(KEY_LOGIN_PREFERENCE)
+            editor1.clear()
             editor1.apply()
         }
     }

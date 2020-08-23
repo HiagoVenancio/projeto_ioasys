@@ -15,16 +15,7 @@ class RetrofitBase {
     init{
         mRetrofit = Retrofit.Builder()
             .baseUrl(URL_BASE)
-            //.client(configuraClient())
             .addConverterFactory(GsonConverterFactory.create())
-            .build()
-    }
-
-    private fun configuraClient(): OkHttpClient {
-        val logging = HttpLoggingInterceptor()
-        logging.level = HttpLoggingInterceptor.Level.BODY
-        return OkHttpClient.Builder()
-            .addInterceptor(logging)
             .build()
     }
 
