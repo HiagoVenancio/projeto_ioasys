@@ -16,15 +16,14 @@
 **Instruções de uso**
 - Na tela de login, digitar o usuario e senha, e apertar em entrar. 
 Caso queira usar um usuário fixo pré-definido para este projeto, basta segurar o botao Entrar.
-- Na tela principal, ao apertar no ícone de lupa, ele irá pedir para Pesquisar por empresa; 
-ao terminar de degitar a empresa, aperte no botão de lupa que aparece no próprio teclado.
+- Na tela principal, ao apertar no ícone de lupa, ele irá pedir para Pesquisar por empresa. Ao terminar de digitar a empresa, aperte no botão de lupa que aparece no próprio teclado. (Digitando apenas a letra *a* na busca, ele retorna duas empresas)
 - Depois de pesquisar, ele irá trazer os dados da empresa, se existirem.
 - Caso tenha dados de empresa, ele irá traze-los e poderá clicar na empresa para ver os detalhes.
 
 **Minhas observações**
-Fiz conforme consegui entender de acordo com o *Escopo do Projeto*, porém, fica algumas observações.
+- Fiz conforme consegui entender de acordo com o *Escopo do Projeto*, porém, fica algumas observações.
 - Não consegui entender aonde deveria usar os dados que são retornados no BODY ao fazer Login.
-- Nas requisições de empresa, eu deixei o parametro *enterprise_types* fixo, e o *name* digitado dinamicamente, de acordo com a Collection do Postman.
+- Nas requisições de empresa, eu deixei os parametros *enterprise_types* com valor 1 fixo, e o *name* digitado dinamicamente na pesquisa, de acordo com a Collection do Postman.
 - Como nenhuma empresa estava retornando imagem, eu criei um paliativo para evitar o carregando do campo, e usei o icone do Android para ser exibido.
 
 Por conta do tempo, eu fiz as funções principais do projeto, e não fiz uso de todos os itens do *Bônus*
